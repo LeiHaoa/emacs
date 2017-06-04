@@ -55,7 +55,7 @@
 (add-hook 'after-init-hook 'global-company-mode)  
 ;;elpy
 (require 'package)
-(elpy-enable)
+(add-hook 'python-mode-hook 'elpy-enable)
 ;; swiper
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
