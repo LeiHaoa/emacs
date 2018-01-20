@@ -1,22 +1,21 @@
 ;;-------------------------------better default------------------------------------------
 
-;;;;ÔÚÐÐÊ×Ö´ÐÐC-kÊ±½«¸ÃÐÐÉ¾³ý
+;;;;
 (setq-default kill-whole-line t)
 
-;;Éè¶¨²»²úÊÇ±¸·ÝÎÄ¼þ
+;;do not make any backup-files
 (setq make-backup-files nil)
 
-;;ÏÔÊ¾ÐÐÁÐºÅ
-(global-linum-mode t)
-;;¹Ø±Õ·äÃùÉù
+;;(global-linum-mode t)
+;;don't make any sounds when emacs warning or error
 (setq ring-bell-function 'ignore)
 
 ;;¸ßÁÁÏÔÊ¾µ±Ç°ÐÐ
 ;(global-hl-line-mode t)
 
-;;Ëõ½øÎÊÌâ
-(setq indent-tabs-mode nil) ;;²»²åÈëtab×Ö·û£¬ÒòÎªTABÊÇÐ°¶ñµÄ;ÊµÔÚÐèÒªTAB¼üÔòÓÃC-q TAB
-(setq default-tab-width 4) ;;Ã¿´ÎËõ½ø4¸ö¿Õ¸ñ
+;;about tabs 
+(setq indent-tabs-mode nil) ;;do not use tab anymore , if you want use is , type <C-q> TAB instead
+(setq default-tab-width 4) ;;set default tab width to 4
 (setq tab-width 4)
 
 ;;abbrev-table
@@ -37,11 +36,12 @@
 										 semantic-ia-complete-symbol
 										 ))
 
-;;¼¤»î C-x C-j À´´ò¿ªÎÄ¼þËùÔÚÄ¿Â¼
+;;dired-x
 (require 'dired-x)
 ;;yes-no --> y-n
+(setq auto-save-mode nil)
 (fset 'yes-or-no-p 'y-or-n-p)
-;;Ñ¡ÖÐÌæ»»Ä£Ê½
+;;delete selection when use backspace
 (delete-selection-mode t)
 
 ;;dired mode
@@ -49,7 +49,7 @@
 (setq dired-recursive-copies 'always)
 
 ;;hook
-(add-hook 'c-mode-common-hook 'hs-minor-mode)  ;ÔÚc-modeÏÂ½«hs-minor-mode´ò¿ª
+(add-hook 'c-mode-common-hook 'hs-minor-mode)  
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
 

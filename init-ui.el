@@ -20,15 +20,13 @@
 ;;关闭guns启动时的画面
 (setq gnus-inhibit-startup-message t)
 
-;;设置主题
-(load-theme 'monokai t)
+;;theme
+;;(load-theme 'monokai t)
 ;;(load-theme 'solarized-dark t)
 ;(require 'color-theme)
 ;(color-theme-initialize)
 ;(color-theme-billw)
 
-;;开始以全屏(it do not work)
-(setq default-frame-alist (quote ((fullscreen . maximize-window))))
-;;光标形式改为"|"
-(setq-default cursor-type 'bar)
+(setq-default cursor-type 'box)
+(blink-cursor-mode (- (*) (*) (*)))
 (provide 'init-ui)

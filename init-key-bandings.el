@@ -31,17 +31,45 @@
 ;;-----------------------------key bandings (kbd)----------------------
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "M-s i") 'counsel-imenu)
-(global-set-key (kbd "M-SPC") 'set-mark-command)
 (global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 (global-set-key (kbd "C-S-d") 'kill-whole-line)
-(global-set-key (kbd "`") 'hydra-hick/body) ;;hydra的绑定功能快捷键，
 (global-set-key (kbd "C-o") 'nextline)
 (global-set-key (kbd "C-<") 'shrink-window-horizontally)
 (global-set-key (kbd "C->") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-x C-r") 'counsel-recentf)  ;;打开最近打开文件
 (global-set-key [f5] 'hs-toggle-hiding) ;;折叠开启开关
 (global-set-key [f8] 'neotree-toggle)    ;;neotree开关
-(global-set-key [f7] 'indent-buffer) ;;格式化整个buffer
+(global-set-key [f7] 'imenu-list-smart-toggle) ;;格式化整个buffer
 (global-set-key (kbd "C-h") 'backward-delete-char-untabify)
+(global-set-key (kbd "C-v") 'set-mark-command)
+(global-set-key (kbd "C-x C-p") 'pop-global-mark)
+(global-set-key (kbd "M-{") 'backward-sexp)
+(global-set-key (kbd "M-}") 'forward-sexp)
+
+
+;;-------------cj-----------
+;;----------------------------bind my key like spacemace----------------g
+(define-prefix-command 'ctl-j-map)
+(global-set-key (kbd "C-j") 'ctl-j-map)
+(global-set-key (kbd "C-j SPC") 'counsel-M-x)
+(bind-keys :prefix-map buffer-prefix-map
+             :prefix "C-j b"
+			 ("b" . ivy-switch-buffer)
+			 ("k" . kill-this-buffer)
+			 )
+
+
+(bind-keys :prefix-map file-prefix-map
+		     :prefix "C-j f"
+			 ("f" . counsel-find-file)
+			 ("g" . counsel-ag))
+
+(bind-keys :prefix-map find-prefix-map
+		     :prefix "C-j i"
+			 ("i" . counsel-imenu)
+			 ("o" . occur))
+
+
+
 (provide 'init-key-bandings)
