@@ -1,5 +1,5 @@
 ;;----------------------------defun myself---------------------------
-;;æ ¼å¼åŒ–æ•´ä¸ªæ–‡ä»¶å‡½æ•°09
+;;¸ñÊ½»¯Õû¸öÎÄ¼şº¯Êı09
 (defun indent-buffer ()
   "Indent the whole buffer."
   (interactive)
@@ -14,14 +14,14 @@
   (move-end-of-line nil)
   (newline-and-indent)
   )
-;;éšè—æ–‡ä»¶ç³»ç»Ÿä¸­çš„^Mç¬¦å· 
+;;Òş²ØÎÄ¼şÏµÍ³ÖĞµÄ^M·ûºÅ 
 ;; (defun hidden-dos-eol ()
 ;;   "do not show ^M in this file"
 ;;   (interactive)
 ;;   (setq buffer-display-table (make-display-table))
 ;;   (aset buffer-display-table ?/^M [])
 ;;   ) 
-;;åˆ é™¤unixæ–‡ä»¶ç³»ç»Ÿä¸­çš„^Mç¬¦å·
+;;É¾³ıunixÎÄ¼şÏµÍ³ÖĞµÄ^M·ûºÅ
 (defun remove-dos-elo ()
   "Replace DOS end od lines CR with Unix eolns CR"
   (interactive)
@@ -37,10 +37,10 @@
 (global-set-key (kbd "C-o") 'nextline)
 (global-set-key (kbd "C-<") 'shrink-window-horizontally)
 (global-set-key (kbd "C->") 'enlarge-window-horizontally)
-(global-set-key (kbd "C-x C-r") 'counsel-recentf)  ;;æ‰“å¼€æœ€è¿‘æ‰“å¼€æ–‡ä»¶
-(global-set-key [f5] 'hs-toggle-hiding) ;;æŠ˜å å¼€å¯å¼€å…³
-(global-set-key [f8] 'neotree-toggle)    ;;neotreeå¼€å…³
-(global-set-key [f7] 'imenu-list-smart-toggle) ;;æ ¼å¼åŒ–æ•´ä¸ªbuffer
+(global-set-key (kbd "C-x C-r") 'counsel-recentf)  ;;´ò¿ª×î½ü´ò¿ªÎÄ¼ş
+(global-set-key [f5] 'hs-toggle-hiding) ;;ÕÛµş¿ªÆô¿ª¹Ø
+(global-set-key [f8] 'neotree-toggle)    ;;neotree¿ª¹Ø
+(global-set-key [f7] 'imenu-list-smart-toggle) ;;¸ñÊ½»¯Õû¸öbuffer
 (global-set-key (kbd "C-h") 'backward-delete-char-untabify)
 (global-set-key (kbd "C-v") 'set-mark-command)
 (global-set-key (kbd "C-x C-p") 'pop-global-mark)
@@ -63,8 +63,7 @@
 (bind-keys :prefix-map file-prefix-map
 		     :prefix "C-j f"
 			 ("f" . counsel-find-file)
-			 ("g" . counsel-ag)
-	                 ("." . isearch-forward-symbol-at-point))
+			 ("g" . counsel-ag))
 
 (bind-keys :prefix-map find-prefix-map
 		     :prefix "C-j i"
