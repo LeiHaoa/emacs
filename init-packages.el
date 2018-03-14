@@ -30,6 +30,7 @@
  		  elpy
  		  popup
  		  ag
+		  evil
  		  ) "Default packages")
  (defun zh/packages-installed-p ()
    (loop for pkg in zh/packages
@@ -83,16 +84,7 @@
   :bind(("C-=" . er/expand-region)
 		)
    )
-;;window-numbering
-;;(window-numbering-mode 1)
 
-;; which-key
-;(use-package which-key
-;    :config
-;	   (which-key-mode)
-;   )
-
-;;(which-key-mode)
 ;;popwin-mode
 (use-package popwin
     :defer t
@@ -120,6 +112,16 @@
   (global-undo-tree-mode)
   :bind(("C-x u" . undo-tree-visualize)
 		)
+  )
+
+(use-package evil
+  :init
+  (evil-mode 1)
+  :config
+  ;;use emacs insert mode when in insert mode
+  (setcdr evil-insert-state-map nil)
+  ;;use esc to back to normal state
+  (define-key evil-insert-state-map [escape] 'evil-normal-state)
   )
 
 (provide 'init-packages)
