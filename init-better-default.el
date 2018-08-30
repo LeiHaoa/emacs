@@ -48,6 +48,11 @@
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
 
+;;my own mode hook
+(defun zh-shell-mode-hook ()
+  (company-mode 0)
+  )
+(add-hook 'shell-mode-hook 'zh-shell-mode-hook)
 ;;hook
 (add-hook 'c-mode-common-hook 'hs-minor-mode)  
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
