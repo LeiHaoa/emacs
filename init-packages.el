@@ -121,7 +121,9 @@
   ;;use emacs insert mode when in insert mode
   (setcdr evil-insert-state-map nil)
   ;;use esc to back to normal state
+  (setq evil-insert-state-cursor 'box)
   (define-key evil-insert-state-map [escape] 'evil-normal-state)
+  (define-key evil-insert-state-map (kbd "C-j") 'evil-normal-state)
   )
 
 (provide 'init-packages)
