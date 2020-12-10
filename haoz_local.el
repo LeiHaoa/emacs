@@ -50,8 +50,8 @@
 (global-set-key (kbd "C->") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-h") 'backward-delete-char-untabify)
 (global-set-key (kbd "C-x C-p") 'pop-global-mark)
-(global-set-key (kbd "M-[") 'backward-sexp)
-(global-set-key (kbd "M-]") 'forward-sexp)
+;;(global-set-key (kbd "M-[") 'backward-sexp)
+;;(global-set-key (kbd "M-]") 'forward-sexp) commet it to avoid terminal paste 200~ 201~ problem
 ;;(global-set-key (kbd "M-j") 'counsel-ag)
 
 
